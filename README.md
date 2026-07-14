@@ -8,7 +8,7 @@ PresentationOS is a reusable workflow for building professional decks from PDFs,
 
 Most AI presentation workflows fail for the same reasons:
 
-- the source material is not prioritized before slide creation;
+- source material is not prioritized before slide creation;
 - the story is not designed before layouts are generated;
 - visual references are copied loosely instead of translated into rules;
 - too much text is placed on each slide;
@@ -16,7 +16,7 @@ Most AI presentation workflows fail for the same reasons:
 - the final deck is difficult to edit;
 - no structured QA pass checks content, numbers, hierarchy, or alignment.
 
-PresentationOS fixes this by using a staged production pipeline.
+PresentationOS fixes this with a staged, artifact-driven production pipeline.
 
 ## Core principle
 
@@ -79,19 +79,23 @@ PresentationOS/
 │   ├── 07-asset-planner.md
 │   ├── 08-codex-builder.md
 │   └── 09-qa-reviewer.md
+├── prompts/
+│   └── 00-orchestrator.md
 ├── templates/
 │   ├── project-brief.md
 │   ├── design-system.md
 │   ├── content-inventory.md
 │   ├── storyline.md
 │   ├── slide-mapping-table.md
+│   ├── chart-specifications.md
 │   ├── visual-asset-manifest.md
 │   └── qa-report.md
 ├── schemas/
 │   └── slide-mapping-table.schema.json
 └── examples/
     └── investment-deck/
-        └── README.md
+        ├── README.md
+        └── slide-mapping-table.example.json
 ```
 
 ## Quick start
@@ -101,8 +105,10 @@ PresentationOS/
 ```text
 projects/client-project/
 ├── 00-input/
-│   ├── source.pdf
+│   ├── sources/
 │   ├── reference-slides/
+│   ├── brand/
+│   ├── data/
 │   └── project-brief.md
 ├── 01-analysis/
 ├── 02-story/
@@ -125,9 +131,11 @@ Copy `templates/project-brief.md` into the project folder. Define:
 - brand and design constraints;
 - claims that require exact sourcing.
 
-### 3. Run agents in order
+### 3. Run the workflow
 
-Use the prompt in each `agents/` file. Save every output as a project artifact. Do not skip directly to the builder unless the deck is extremely simple.
+For manual control, use each prompt in `agents/` in numerical order and save every output as a project artifact.
+
+For coordinated operation, start with `prompts/00-orchestrator.md`. The orchestrator manages stage status and approval gates but should still use the specialist agent prompts.
 
 ### 4. Give Codex the build package
 
@@ -136,17 +144,19 @@ The minimum build package is:
 - original source files;
 - project brief;
 - design system;
+- content inventory;
 - storyline;
 - slide mapping table;
 - approved slide copy;
-- chart and diagram plan;
-- visual asset manifest.
+- chart and diagram specifications;
+- visual asset manifest;
+- approved asset files.
 
-Codex should create an editable `.pptx`, not a collection of slide screenshots.
+Use `agents/08-codex-builder.md`. Codex should create an editable `.pptx`, not a collection of slide screenshots.
 
 ### 5. Review and iterate
 
-Run the QA Reviewer. Fix all critical issues before polishing secondary slides.
+Render the slides and use `agents/09-qa-reviewer.md`. Fix all Critical issues before polishing secondary slides.
 
 ## Supported deck types in v0.1
 
@@ -168,9 +178,18 @@ The architecture is intentionally generic enough to support strategy decks, prop
 - Reference decks provide design rules, not content to copy.
 - The final human reviewer owns taste, accuracy, and client suitability.
 
-## Status
+## Current status
 
-Current target: **v0.1 — Foundation and agent specifications**.
+**v0.1 foundation is complete:**
+
+- product documentation;
+- nine agent specifications;
+- orchestrator prompt;
+- working templates;
+- slide-plan JSON schema;
+- investment-deck example.
+
+The next milestone is **v0.2 Build Starter Kit**: a reference project folder, generation code, rendering commands, theme tokens, and an editable sample deck.
 
 ## License
 
