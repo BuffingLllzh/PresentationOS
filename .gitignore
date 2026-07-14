@@ -1,0 +1,30 @@
+# PresentationOS framework files are versioned.
+# Client project inputs and generated deliverables are ignored by default.
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Secrets and local configuration
+.env
+.env.*
+*.key
+*.pem
+
+# Python / Node build noise
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+~$*.pptx
+
+# Client source material and confidential inputs
+projects/*/
