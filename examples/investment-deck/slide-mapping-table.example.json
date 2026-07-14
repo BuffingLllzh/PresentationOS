@@ -1,0 +1,167 @@
+{
+  "project_id": "example-investment-deck",
+  "artifact_version": "0.1",
+  "status": "DRAFT",
+  "language": "English",
+  "target_slide_count": 16,
+  "assumptions": [
+    "All company names, values, and source references are hypothetical.",
+    "The example demonstrates structure rather than a complete investment analysis."
+  ],
+  "open_questions": [
+    "Confirm the definition of active customers.",
+    "Confirm whether forecast values are management case or adjusted base case."
+  ],
+  "slides": [
+    {
+      "slide_number": 2,
+      "section": "Recommendation",
+      "slide_type": "statement",
+      "slide_objective": "Give the investment committee a clear preliminary recommendation and the conditions attached to it.",
+      "action_title": "Proceed to detailed diligence, with concentration and forecast quality as the two gating questions",
+      "key_message": "The preliminary case is attractive enough to justify further work, but not yet strong enough for final approval.",
+      "supporting_points": [
+        "The market and customer economics support continued growth.",
+        "Customer concentration creates material downside exposure.",
+        "Management's forecast requires validation of conversion and margin assumptions."
+      ],
+      "evidence": [
+        "Illustrative market growth and company performance evidence from hypothetical source materials."
+      ],
+      "sources": [
+        {
+          "file": "company-overview.pdf",
+          "location": "pages 8–12",
+          "supports": "Market and customer-economics claims.",
+          "notes": "Hypothetical reference."
+        },
+        {
+          "file": "financial-model.xlsx",
+          "location": "Summary and Forecast sheets",
+          "supports": "Historical growth, concentration, and forecast assumptions.",
+          "notes": "Hypothetical reference."
+        }
+      ],
+      "visual": {
+        "type": "comparison",
+        "purpose": "Balance three reasons to proceed against two gating risks.",
+        "specification_id": null,
+        "notes": [
+          "Use an asymmetric evidence-versus-risk composition rather than equal decorative cards."
+        ]
+      },
+      "layout_family": "investment-thesis",
+      "assets": [],
+      "copy_limits": {
+        "title_max_lines": 2,
+        "body_max_words": 85,
+        "notes": "Keep risk language explicit."
+      },
+      "build_notes": [
+        "Highlight the recommendation verb and the two gating questions.",
+        "Do not use icons as substitutes for evidence."
+      ],
+      "speaker_notes_or_appendix_link": "Appendix: preliminary diligence-question register.",
+      "open_issues": [
+        "Recommendation strength depends on confirming the latest customer-concentration data."
+      ],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "slide_number": 9,
+      "section": "Financial performance",
+      "slide_type": "data",
+      "slide_objective": "Show that historical growth is attractive while making concentration risk impossible to miss.",
+      "action_title": "Revenue has grown at 28% CAGR, but the top five customers still represent 46% of sales",
+      "key_message": "Growth quality cannot be assessed independently of customer concentration.",
+      "supporting_points": [
+        "Revenue increased from the illustrative 2022 base through 2025.",
+        "The top five customers account for nearly half of current sales.",
+        "Diligence should test renewal, expansion, and churn by major account."
+      ],
+      "evidence": [
+        "Historical revenue series.",
+        "Current-year customer revenue by account."
+      ],
+      "sources": [
+        {
+          "file": "financial-model.xlsx",
+          "location": "Historical P&L, cells B12:E12",
+          "supports": "Revenue history and CAGR.",
+          "notes": "Hypothetical cell range."
+        },
+        {
+          "file": "financial-model.xlsx",
+          "location": "Customer Analysis, cells A5:B24",
+          "supports": "Customer concentration.",
+          "notes": "Hypothetical cell range."
+        }
+      ],
+      "visual": {
+        "type": "chart",
+        "purpose": "Show the revenue trend and top-five concentration as related but distinct evidence.",
+        "specification_id": "V009",
+        "notes": [
+          "Use a column or line trend on the left and ranked concentration bars on the right.",
+          "Do not combine the two datasets on dual axes."
+        ]
+      },
+      "layout_family": "chart-left-insight-right",
+      "assets": [],
+      "copy_limits": {
+        "title_max_lines": 2,
+        "body_max_words": 45,
+        "notes": "Most explanation should be embedded in chart annotation."
+      },
+      "build_notes": [
+        "Keep charts editable.",
+        "Use the primary accent for the latest revenue value and concentration risk only.",
+        "Add exact source notes beneath each visual."
+      ],
+      "speaker_notes_or_appendix_link": "Appendix: customer-level cohort and renewal analysis.",
+      "open_issues": [
+        "Confirm whether concentration uses gross or net revenue."
+      ],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "slide_number": 14,
+      "section": "Diligence plan",
+      "slide_type": "process",
+      "slide_objective": "Translate identified risks into a practical, decision-oriented diligence plan.",
+      "action_title": "A four-week diligence plan can resolve the three questions that determine whether the case advances",
+      "key_message": "The next phase should be organized around decision gates rather than broad information collection.",
+      "supporting_points": [
+        "Validate revenue quality and concentration.",
+        "Test forecast conversion and margin assumptions.",
+        "Assess competitive and regulatory downside."
+      ],
+      "evidence": [],
+      "sources": [],
+      "visual": {
+        "type": "process",
+        "purpose": "Connect workstreams, weekly outputs, and decision gates.",
+        "specification_id": "V014",
+        "notes": [
+          "Use a four-column timeline with three horizontal workstreams and explicit gate markers."
+        ]
+      },
+      "layout_family": "timeline-workstreams",
+      "assets": [],
+      "copy_limits": {
+        "title_max_lines": 2,
+        "body_max_words": 70,
+        "notes": "Use short workstream labels and outcome-oriented milestones."
+      },
+      "build_notes": [
+        "Construct with editable shapes and connectors.",
+        "Use accent color only for decision gates."
+      ],
+      "speaker_notes_or_appendix_link": null,
+      "open_issues": [
+        "Confirm owner availability before assigning named responsibilities."
+      ],
+      "status": "DRAFT"
+    }
+  ]
+}
